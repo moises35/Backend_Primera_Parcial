@@ -70,3 +70,19 @@
    ```sh
     /subsystem=ee/service=default-bindings:undefine-attribute(name=datasource)
    ```
+
+</br>
+</br>
+
+# RUTAS
+host: `http://localhost:8080/backend`
+
++ Se puede importar el archivo `Postaman/postman_collection.json` en Postman para poder probar la API rapidamente.
+
+## Rutas de la API cliente
++ `GET` /cliente
++ `GET` /cliente/all
++ `GET` /cliente/find/{id}
++ `POST` /cliente/add
++ `PUT` /cliente/update
++ `DELETE` /cliente/delete/{id}
