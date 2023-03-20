@@ -86,3 +86,11 @@ host: `http://localhost:8080/backend`
 + `POST` /cliente/add
 + `PUT` /cliente/update
 + `DELETE` /cliente/delete/{id}
+
+## Rutas de la API premio
++ `GET` /premio
++ `GET` /premio/all
++ `GET` /premio/find/{id}
++ `POST` /premio/add
++ `PUT` /premio/update
++ `DELETE` /premio/delete/{id}
