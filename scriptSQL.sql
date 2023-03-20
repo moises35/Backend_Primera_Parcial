@@ -12,5 +12,15 @@ CREATE TABLE public.cliente(
 	CONSTRAINT pk_cliente PRIMARY KEY (id_cliente)
 );
 
-
 CREATE SEQUENCE public.cliente_seq;
+
+-- Creación de la tabla Premios
+CREATE TABLE public.premios(
+	id_premio INTEGER NOT NULL,
+	descripcion CHARACTER VARYING(100),
+	puntos_req INTEGER,
+	CONSTRAINT pk_premios PRIMARY KEY (id_premio)
+);
+
+CREATE SEQUENCE public.premio_seq;
+
