@@ -10,12 +10,12 @@
 			"name": "Cliente",
 			"item": [
 				{
-					"name": "/cliente",
+					"name": "All",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/backend/cliente",
+							"raw": "http://localhost:8080/backend/api/clientes",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -23,19 +23,20 @@
 							"port": "8080",
 							"path": [
 								"backend",
-								"cliente"
+								"api",
+								"clientes"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "/cliente/all",
+					"name": "GET ID",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/backend/cliente/all",
+							"raw": "http://localhost:8080/backend/api/clientes/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -43,20 +44,21 @@
 							"port": "8080",
 							"path": [
 								"backend",
-								"cliente",
-								"all"
+								"api",
+								"clientes",
+								"2"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "/cliente/find/{id}",
+					"name": "GET apellido",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/backend/cliente/find/1",
+							"raw": "http://localhost:8080/backend/api/clientes/consultaApellido?apellido=encina",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -64,22 +66,56 @@
 							"port": "8080",
 							"path": [
 								"backend",
-								"cliente",
-								"find",
-								"1"
+								"api",
+								"clientes",
+								"consultaApellido"
+							],
+							"query": [
+								{
+									"key": "apellido",
+									"value": "encina"
+								}
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "/cliente/add",
+					"name": "GET nombre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/backend/api/clientes/consultaNombre?nombre=arturo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"backend",
+								"api",
+								"clientes",
+								"consultaNombre"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "arturo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Moisés\",\r\n    \"apellido\": \"Alvarenga\",\r\n    \"numDocumento\": \"12345678\",\r\n    \"tipoDocumento\": \"Cedula\",\r\n    \"nacionalidad\": \"Paraguaya\",\r\n    \"email\": \"moises@gmail.com\",\r\n    \"telefono\": \"0971170659\",\r\n    \"fecha_nacimiento\": \"19/08/2001\"\r\n}",
+							"raw": "{\r\n    \"nombre\": \"Arturo\",\r\n    \"apellido\": \"Encina\",\r\n    \"nroDocumento\": 1234567,\r\n    \"tipoDocumento\": \"CI\",\r\n    \"nacionalidad\": \"Paraguaya\",\r\n    \"email\": \"artur0@email.com\",\r\n    \"telefono\": \"0971178959\",\r\n    \"fechaNacimiento\": \"2001-03-02\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -87,7 +123,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/backend/cliente/add",
+							"raw": "http://localhost:8080/backend/api/clientes",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -95,21 +131,21 @@
 							"port": "8080",
 							"path": [
 								"backend",
-								"cliente",
-								"add"
+								"api",
+								"clientes"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "/cliente/update",
+					"name": "Update",
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idCliente\": 1,\r\n    \"nombre\": \"Moisés\",\r\n    \"apellido\": \"Alvarenga\",\r\n    \"numDocumento\": \"12345678\",\r\n    \"tipoDocumento\": \"Cedula\",\r\n    \"nacionalidad\": \"Paraguaya\",\r\n    \"email\": \"moises@gmail.com\",\r\n    \"telefono\": \"0971170659\",\r\n    \"fecha_nacimiento\": \"19/08/2001\"\r\n}",
+							"raw": "{\r\n    \"idCliente\": 2,\r\n    \"nombre\": \"Arturo\",\r\n    \"apellido\": \"Encina\",\r\n    \"nroDocumento\": 1234567,\r\n    \"tipoDocumento\": \"CI\",\r\n    \"nacionalidad\": \"Paraguaya\",\r\n    \"email\": \"artur0@email.com\",\r\n    \"telefono\": \"0971178959\",\r\n    \"fechaNacimiento\": \"2001-03-02\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -117,7 +153,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/backend/cliente/update",
+							"raw": "http://localhost:8080/backend/api/clientes/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -125,20 +161,21 @@
 							"port": "8080",
 							"path": [
 								"backend",
-								"cliente",
-								"update"
+								"api",
+								"clientes",
+								"2"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "/cliente/delete/{id}",
+					"name": "Delete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/backend/cliente/delete/1",
+							"raw": "http://localhost:8080/backend/api/clientes/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -146,8 +183,8 @@
 							"port": "8080",
 							"path": [
 								"backend",
-								"cliente",
-								"delete",
+								"api",
+								"clientes",
 								"1"
 							]
 						}
@@ -157,79 +194,16 @@
 			]
 		},
 		{
-			"name": "Premio",
+			"name": "Conceptos de Puntos",
 			"item": [
 				{
-					"name": "/premio",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/backend/premio",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"backend",
-								"premio"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/premio/all",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/backend/premio/all",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"backend",
-								"premio",
-								"all"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/premio/find/{id}",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/backend/premio/find/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"backend",
-								"premio",
-								"find",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/premio/add",
+					"name": "Add",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"descripcion\": \"Un llaverito\",\r\n    \"puntosRequeridos\": 150\r\n}",
+							"raw": "{\r\n    \"descripcion\": \"Premio de un caramelito\",\r\n    \"puntosRequeridos\": 10\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -237,7 +211,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/backend/premio/add",
+							"raw": "http://localhost:8080/backend/api/conceptos",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -245,21 +219,68 @@
 							"port": "8080",
 							"path": [
 								"backend",
-								"premio",
-								"add"
+								"api",
+								"conceptos"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "/premio/update",
+					"name": "Conceptos de Usos de Puntos",
 					"request": {
-						"method": "PUT",
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/backend/api/conceptos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"backend",
+								"api",
+								"conceptos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reglas",
+			"item": [
+				{
+					"name": "Reglas de asignación",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/backend/api/reglas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"backend",
+								"api",
+								"reglas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idCliente\": 1,\r\n    \"nombre\": \"Moisés\",\r\n    \"apellido\": \"Alvarenga\",\r\n    \"numDocumento\": \"12345678\",\r\n    \"tipoDocumento\": \"Cedula\",\r\n    \"nacionalidad\": \"Paraguaya\",\r\n    \"email\": \"moises@gmail.com\",\r\n    \"telefono\": \"0971170659\",\r\n    \"fecha_nacimiento\": \"19/08/2001\"\r\n}",
+							"raw": "{\r\n    \"limiteInferior\": 0,\r\n    \"limiteSuperior\": 199999,\r\n    \"montoEquivalencia\": 50000\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -267,7 +288,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/backend/premio/update",
+							"raw": "http://localhost:8080/backend/api/reglas",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -275,20 +296,20 @@
 							"port": "8080",
 							"path": [
 								"backend",
-								"premio",
-								"update"
+								"api",
+								"reglas"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "/premio/delete/{id}",
+					"name": "Puntos según un monto",
 					"request": {
-						"method": "DELETE",
+						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/backend/premio/delete/1",
+							"raw": "http://localhost:8080/backend/api/reglas/equivalencia?monto=150000",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -296,9 +317,374 @@
 							"port": "8080",
 							"path": [
 								"backend",
-								"premio",
-								"delete",
-								"1"
+								"api",
+								"reglas",
+								"equivalencia"
+							],
+							"query": [
+								{
+									"key": "monto",
+									"value": "150000"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vencimientos",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/backend/api/vencimientos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"backend",
+								"api",
+								"vencimientos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fechaInicio\": \"2020-09-14\",\r\n    \"fechaFin\": \"2020-09-26\",\r\n    \"duracion\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/backend/api/vencimientos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"backend",
+								"api",
+								"vencimientos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bolsa",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/backend/api/bolsas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"backend",
+								"api",
+								"bolsas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idCliente\": 2,\r\n    \"montoOperacion\": 150000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/backend/api/bolsas/agregar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"backend",
+								"api",
+								"bolsas",
+								"agregar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bolsa por cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/backend/api/bolsas/cliente?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"backend",
+								"api",
+								"bolsas",
+								"cliente"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bolsa por rango puntos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/backend/api/bolsas/rangoPunto?punto1=1&punto2=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"backend",
+								"api",
+								"bolsas",
+								"rangoPunto"
+							],
+							"query": [
+								{
+									"key": "punto1",
+									"value": "1"
+								},
+								{
+									"key": "punto2",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bolsa Vencimiento",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"duracion\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/backend/api/bolsas/vencimiento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"backend",
+								"api",
+								"bolsas",
+								"vencimiento"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Uso Puntos",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/backend/api/usoPuntos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"backend",
+								"api",
+								"usoPuntos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idCliente\": 2,\r\n    \"conceptoDeUso\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/backend/api/usoPuntos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"backend",
+								"api",
+								"usoPuntos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Uso Puntos Concepto",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idConcepto\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/backend/api/usoPuntos/concepto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"backend",
+								"api",
+								"usoPuntos",
+								"concepto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Uso puntos cliente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idCliente\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/backend/api/usoPuntos/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"backend",
+								"api",
+								"usoPuntos",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta por fecha",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/backend/api/usoPuntos/porFecha?fecha=14-09-2020",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"backend",
+								"api",
+								"usoPuntos",
+								"porFecha"
+							],
+							"query": [
+								{
+									"key": "fecha",
+									"value": "14-09-2020"
+								}
 							]
 						}
 					},

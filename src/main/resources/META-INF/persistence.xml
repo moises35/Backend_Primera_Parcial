@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-    <persistence-unit name="pruebaPU">
-        <jta-data-source>java:jboss/datasources/pwb</jta-data-source>
-        <class>py.com.progweb.backend.model.Cliente</class>
-        <class>py.com.progweb.backend.model.Premio</class>
-        <properties>
-            <property name="hibernate.id.new_generator_mappings" value="true"/>
-            <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
-        </properties>
-    </persistence-unit>
+  <persistence-unit name="pruebaPU">
+    <jta-data-source>java:jboss/datasources/pwb</jta-data-source>
+    <class>py.com.prueba.laboratorio.modelo.Bolsa</class>
+    <class>py.com.prueba.laboratorio.modelo.Cabecera</class>
+    <class>py.com.prueba.laboratorio.modelo.Cliente</class>
+    <class>py.com.prueba.laboratorio.modelo.Concepto</class>
+    <class>py.com.prueba.laboratorio.modelo.Detalle</class>
+    <class>py.com.prueba.laboratorio.modelo.ReglaAsignacion</class>
+    <class>py.com.prueba.laboratorio.modelo.Vencimiento</class>
+    <properties>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.id.new_generator_mappings" value="true"/>
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+    </properties>
+  </persistence-unit>
 </persistence>

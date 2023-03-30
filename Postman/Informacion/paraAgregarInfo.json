@@ -1,0 +1,29 @@
+{
+    "cliente": {
+        "nombre": "Lucia",
+        "apellido": "Salinas",
+        "nroDocumento": 3399594,
+        "tipoDocumento": "CI",
+        "nacionalidad": "Paraguaya",
+        "email": "malu.salinas@email.com",
+        "telefono": "0984 555 555",
+        "fechaNacimiento": "1994-09-24"
+    },
+
+    "conceptoDeUso": {
+        "descripcion": "vale de premio",
+        "puntosRequeridos": 10
+    },
+
+    "vencimietos": {
+        "fechaInicio": "2020-09-13",
+        "fechaFin": "2020-09-15",
+        "duracion": 2
+    },
+
+    "reglaAsignacion": {
+        "limiteInferior": 0,
+        "limiteSuperior": 199999,
+        "montoEquivalencia": 50000
+    }
+}
