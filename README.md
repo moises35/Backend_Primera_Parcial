@@ -79,7 +79,7 @@ host: `http://localhost:8080/backend`
 
 + Se puede importar el archivo `Postaman/postman_collection.json` en Postman para poder probar la API rapidamente.
 
-## Rutas de la API cliente
+<!-- ## Rutas de la API cliente
 + `GET` /cliente
 + `GET` /cliente/all
 + `GET` /cliente/find/{id}
@@ -93,4 +93,4 @@ host: `http://localhost:8080/backend`
 + `GET` /premio/find/{id}
 + `POST` /premio/add
 + `PUT` /premio/update
-+ `DELETE` /premio/delete/{id}
++ `DELETE` /premio/delete/{id} -->
