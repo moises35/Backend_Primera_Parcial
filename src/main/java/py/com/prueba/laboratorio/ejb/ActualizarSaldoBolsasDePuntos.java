@@ -17,7 +17,7 @@ public class ActualizarSaldoBolsasDePuntos {
     //info = "Cada 30 segundos")
     public void actualizarSaldoBolsaDePuntos() {
         bolsaDePuntosDAO.updateBolsaSaldoCaducados();
-        System.out.println("Bolsas de puntos actualizadas =D");
+        System.out.println("Bolsas de puntos actualizadas");
     }
     
 }

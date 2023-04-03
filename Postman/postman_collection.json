@@ -674,7 +674,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idCliente\": 8,\r\n    \"conceptoDeUso\": 4\r\n}",
+							"raw": "{\r\n    \"idCliente\": 10,\r\n    \"conceptoDeUso\": 4\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
