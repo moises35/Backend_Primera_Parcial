@@ -101,7 +101,15 @@ public class UsoPuntosServiceRS {
                     
                     usoPuntosService.guardarDetalle(detalle);
                     // Enviamos el mail
-                    Mail.enviarCorreoOutlook(cabecera.getIdCliente().getEmail(), "Factura de Canje - PWB", detalle.toString());
+                    System.out.println("--> Bplsa1: " + bolsa1.getIdCliente().getEmail());
+                    System.out.println("--> Detalle: " + detalle.toString());
+                    String mensaje = "Se ha realizado un canje con los siguientes datos: \n" + 
+                            "--> ID de concepto de uso: " + detalle.getIdCabecera().getConceptoDeUso().getIdConcepto() +
+                            "\n--> Nombre y Apellido: " + detalle.getIdBolsa().getIdCliente().getNombre() + " " + detalle.getIdBolsa().getIdCliente().getApellido() + 
+                            "\n--> Puntos utilizados: " + detalle.getPuntajeUtilizado() +
+                            "\n--> Puntos restantes: "+ detalle.getIdBolsa().getSaldoPuntos() + 
+                            "\n--> Fecha de transacción: " + detalle.getIdCabecera().getFecha();
+                    Mail.enviarCorreoOutlook(bolsa1.getIdCliente().getEmail(), "Factura de Canje - PWB", mensaje);
                 }
                 
             }
