@@ -100,7 +100,8 @@ public class UsoPuntosServiceRS {
                     detalle.setPuntajeUtilizado(concepto.getPuntosRequeridos());
                     
                     usoPuntosService.guardarDetalle(detalle);
-                    Mail.enviarCorreoOutlook("correo@gmail.com", "Factura de Canje - PWB", detalle.toString());
+                    // Enviamos el mail
+                    Mail.enviarCorreoOutlook(cabecera.getIdCliente().getEmail(), "Factura de Canje - PWB", detalle.toString());
                 }
                 
             }
