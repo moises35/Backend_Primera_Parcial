@@ -36,7 +36,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/backend/api/clientes/2",
+							"raw": "http://localhost:8080/backend/api/clientes/8",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -46,7 +46,7 @@
 								"backend",
 								"api",
 								"clientes",
-								"2"
+								"8"
 							]
 						}
 					},
@@ -58,7 +58,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/backend/api/clientes/consultaApellido?apellido=encina",
+							"raw": "http://localhost:8080/backend/api/clientes/consultaApellido?apellido=sosa",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -73,7 +73,7 @@
 							"query": [
 								{
 									"key": "apellido",
-									"value": "encina"
+									"value": "sosa"
 								}
 							]
 						}
@@ -86,7 +86,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/backend/api/clientes/consultaNombre?nombre=arturo",
+							"raw": "http://localhost:8080/backend/api/clientes/consultaNombre?nombre=gustavo",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -101,7 +101,35 @@
 							"query": [
 								{
 									"key": "nombre",
-									"value": "arturo"
+									"value": "gustavo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Cumpleaños",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/backend/api/clientes/consultaCumple?fecha=01-01-2000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"backend",
+								"api",
+								"clientes",
+								"consultaCumple"
+							],
+							"query": [
+								{
+									"key": "fecha",
+									"value": "01-01-2000"
 								}
 							]
 						}
@@ -115,7 +143,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Arturo\",\r\n    \"apellido\": \"Encina\",\r\n    \"nroDocumento\": 1234567,\r\n    \"tipoDocumento\": \"CI\",\r\n    \"nacionalidad\": \"Paraguaya\",\r\n    \"email\": \"artur0@email.com\",\r\n    \"telefono\": \"0971178959\",\r\n    \"fechaNacimiento\": \"2001-03-02\"\r\n}",
+							"raw": "{\r\n    \"nombre\": \"Gustavo\",\r\n    \"apellido\": \"Sosa\",\r\n    \"nroDocumento\": 1234567,\r\n    \"tipoDocumento\": \"CI\",\r\n    \"nacionalidad\": \"Paraguaya\",\r\n    \"email\": \"sosaGust@email.com\",\r\n    \"telefono\": \"0971178959\",\r\n    \"fechaNacimiento\": \"2000-01-01\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -175,7 +203,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/backend/api/clientes/1",
+							"raw": "http://localhost:8080/backend/api/clientes/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -185,7 +213,7 @@
 								"backend",
 								"api",
 								"clientes",
-								"1"
+								"4"
 							]
 						}
 					},
@@ -203,7 +231,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"descripcion\": \"Premio de un caramelito\",\r\n    \"puntosRequeridos\": 10\r\n}",
+							"raw": "{\r\n    \"descripcion\": \"Premio de un caramelito\",\r\n    \"puntosRequeridos\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -227,7 +255,7 @@
 					"response": []
 				},
 				{
-					"name": "Conceptos de Usos de Puntos",
+					"name": "All",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -242,6 +270,59 @@
 								"backend",
 								"api",
 								"conceptos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/backend/api/conceptos/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"backend",
+								"api",
+								"conceptos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idConcepto\": 1,\r\n    \"descripcion\": \"Premio de un chocolatito\",\r\n    \"puntosRequeridos\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/backend/api/conceptos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"backend",
+								"api",
+								"conceptos",
+								"1"
 							]
 						}
 					},
@@ -420,7 +501,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idCliente\": 2,\r\n    \"montoOperacion\": 150000\r\n}",
+							"raw": "{\r\n    \"idCliente\": 8,\r\n    \"montoOperacion\": 400000\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -450,7 +531,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/backend/api/bolsas/cliente?id=2",
+							"raw": "http://localhost:8080/backend/api/bolsas/cliente?id=8",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -465,7 +546,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "2"
+									"value": "8"
 								}
 							]
 						}
@@ -514,7 +595,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"duracion\": 2\r\n}\r\n",
+							"raw": "{\r\n    \"duracion\": 3\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -533,6 +614,28 @@
 								"api",
 								"bolsas",
 								"vencimiento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/backend/api/bolsas/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"backend",
+								"api",
+								"bolsas",
+								"8"
 							]
 						}
 					},
@@ -571,7 +674,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idCliente\": 2,\r\n    \"conceptoDeUso\": 1\r\n}",
+							"raw": "{\r\n    \"idCliente\": 8,\r\n    \"conceptoDeUso\": 4\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -604,7 +707,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idConcepto\": 2\r\n}",
+							"raw": "{\r\n    \"idConcepto\": 4\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -638,7 +741,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idCliente\": 3\r\n}",
+							"raw": "{\r\n    \"idCliente\": 8\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -668,7 +771,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/backend/api/usoPuntos/porFecha?fecha=14-09-2020",
+							"raw": "http://localhost:8080/backend/api/usoPuntos/porFecha?fecha=03-04-2023",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -683,7 +786,7 @@
 							"query": [
 								{
 									"key": "fecha",
-									"value": "14-09-2020"
+									"value": "03-04-2023"
 								}
 							]
 						}

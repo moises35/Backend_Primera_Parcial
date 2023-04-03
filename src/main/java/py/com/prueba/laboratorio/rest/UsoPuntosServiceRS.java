@@ -71,14 +71,20 @@ public class UsoPuntosServiceRS {
         try {
             Integer idCliente = cabecera.getIdCliente().getIdCliente();
             Integer idConcepto = cabecera.getConceptoDeUso().getIdConcepto();
-
+            System.out.println("--> El idClientes es: " + idCliente);
+            System.out.println("--> El idConcepto es: " + idConcepto);
+            
             /*buscar bolsas del cliente */
             List<Bolsa> bolsa = usoPuntosService.buscarBolsaCliente(idCliente);
             /* buscar concepto */
             Concepto concepto = usoPuntosService.buscarConcepto(idConcepto);
+            System.out.println(bolsa);
+            System.out.println(concepto);
             if (bolsa != null) /* verificar si cumple con el punto requerido del concepto*/ {
+                System.out.println(" *** Entre al primer if  ***");
                 Bolsa bolsa1 = usoPuntosService.verificarPuntoRequerido(concepto, bolsa);
                 if (bolsa1 != null) {
+                    System.out.println(" *** Entre al segundo if  ***");
                     bolsa1.setPuntajeUtilizado(concepto.getPuntosRequeridos());
                     cabecera.setPuntosUtilizado(concepto.getPuntosRequeridos());
                     Integer saldo = bolsa1.getPuntajeAsignado() - bolsa1.getPuntajeUtilizado();

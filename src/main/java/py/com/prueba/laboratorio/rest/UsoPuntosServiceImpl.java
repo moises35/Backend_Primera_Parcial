@@ -59,15 +59,16 @@ public class UsoPuntosServiceImpl implements UsoPuntosService, UsoPuntosServiceR
     @Override
     /* aca debo ver como verificar la bolsa con el concepto*/
     public Bolsa verificarPuntoRequerido(Concepto concepto, List<Bolsa> bolsa) {
-
         try {
-
             for (Bolsa b : bolsa) {
+                System.out.println(b);
+                System.out.println(b.getSaldoPuntos());
+                System.out.println(concepto.getPuntosRequeridos());
                 if (b.getSaldoPuntos() >= concepto.getPuntosRequeridos()) {
                     return b;
                 }
+                System.out.println();
             }
-
         } catch (NoResultException e) {
             return null;
         }
