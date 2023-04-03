@@ -18,6 +18,7 @@ import py.com.prueba.laboratorio.modelo.Cabecera;
 import py.com.prueba.laboratorio.modelo.Cliente;
 import py.com.prueba.laboratorio.modelo.Concepto;
 import py.com.prueba.laboratorio.modelo.Detalle;
+import py.com.prueba.laboratorio.utils.Mail;
 
 
 @Path("/usoPuntos")
@@ -99,7 +100,7 @@ public class UsoPuntosServiceRS {
                     detalle.setPuntajeUtilizado(concepto.getPuntosRequeridos());
                     
                     usoPuntosService.guardarDetalle(detalle);
-                    
+                    Mail.sendEmail("destinatario@example.com", "Prueba de correo electrónico", "¡Hola! Este es un mensaje de prueba.");
                 }
                 
             }
