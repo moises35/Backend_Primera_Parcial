@@ -7,8 +7,8 @@ import javax.mail.internet.*;
 
 public class Mail {
     public static void enviarCorreoOutlook(String destinatario, String asunto, String cuerpo) {
-        String remitente = "dd";
-        String password = "dd";
+        String remitente = "pruebapwb@outlook.com";
+        String password = "prueba35.pwb";
         String host = "smtp.office365.com";
         String port = "587";
 
